@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Set Game</title>
+    <style>
+        #app {
+            height: 400px;
+            width: 600px;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        img{
+            margin: 14px;
+            padding: 12px;
+            border: 1px solid black;
+        }
+        .addFrame{
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+
+    <div id="app">    
+        <div v-for="card in cards.slice(0,12)">
+            <img :src='card.url' v-on:click="selectedBox" /> 
+        </div>
+    </div>
+
+    <script src="js/card.js"></script>
+</body>
+
+</html>
