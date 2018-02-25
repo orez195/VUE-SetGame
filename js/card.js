@@ -5,6 +5,7 @@ new Vue({
         url: '',
         fill: '',
         shape: '',
+        cardSelection: [],
     },
     methods: {
         shuffleArray(array) {
@@ -85,13 +86,18 @@ new Vue({
                 }
 
             }
+            this.cards = this.cards.slice(0,12);
         },
-        selectedBox() {
-            let cardSelection = this.cards.push(this.cards)
+        selectedBox(currCard) {
+            this.cardSelection.push(currCard);
+            this.$set(currCard, 'selected', !currCard.selected);
+
         }
     },
     created (){
         this.createCardsArray();
         this.shuffleArray(this.cards);
+
+
     },
 })

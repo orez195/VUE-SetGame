@@ -18,9 +18,10 @@
             margin: 14px;
             padding: 12px;
             border: 1px solid black;
+            box-sizing: border-box;
         }
         .addFrame{
-            border: 2px solid black;
+            border: 1px solid blue;
         }
     </style>
 </head>
@@ -30,8 +31,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
 
     <div id="app">    
-        <div v-for="card in cards.slice(0,12)">
-            <img :src='card.url' v-on:click="selectedBox" /> 
+        <div v-for="card in cards">
+            <img :src='card.url' v-on:click="selectedBox(card)" :class="{addFrame:card.selected}"/> 
         </div>
     </div>
 
