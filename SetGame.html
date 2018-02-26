@@ -17,11 +17,11 @@
         img{
             margin: 14px;
             padding: 12px;
-            border: 1px solid black;
+            border: 1px dashed black;
             box-sizing: border-box;
         }
         .addFrame{
-            border: 1px solid blue;
+            border: 1px solid red;
         }
     </style>
 </head>
@@ -31,7 +31,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
 
     <div id="app">    
-        <div v-for="card in cards">
+        <div v-for="card in cards.slice(0,12)">
             <img :src='card.url' v-on:click="selectedBox(card)" :class="{addFrame:card.selected}"/> 
         </div>
     </div>
