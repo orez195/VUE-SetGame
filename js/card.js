@@ -102,10 +102,13 @@ var app = new Vue({
                     ( (cardArr[0].fill   === cardArr[1].fill   && cardArr[0].fill   === cardArr[2].fill)   || (cardArr[0].fill   !== cardArr[1].fill   && cardArr[0].fill   !== cardArr[2].fill   && cardArr[1].fill   !== cardArr[2].fill  ) )
                 ){ 
                     alert("Yay! You got a match!");
+                    app.cardSelection.forEach(currCard => {currCard.selected = false});
                     app.cardSelection = app.cardSelection.slice(3,0);
                     winCount += 1;
+                    document.getElementById("score").innerHTML += "|";
                 } else {
                     alert("Not a match!");
+                    app.cardSelection.forEach(currCard => {currCard.selected = false});
                     app.cardSelection = app.cardSelection.slice(3,0);            
                 } 
             }
